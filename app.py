@@ -1,14 +1,11 @@
-from cProfile import run
-from curses import flash
-from unicodedata import name
-from flask import Flask, request, escape
+from flask import Flask, render_template, request, escape
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    name = request.args.get('name', 'world')
-    return f'Hello, {escape(name)}!'
+    return render_template('index.html')
 
-""" if __name__ == '__main__':
-    pass """
+
+if __name__ == '__main__':
+    app.run(debug=True, use_reloader=True)
