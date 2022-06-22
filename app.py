@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask import Flask, render_template, request, escape
 
 app = Flask(__name__)
